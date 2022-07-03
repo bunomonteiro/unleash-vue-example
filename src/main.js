@@ -9,7 +9,7 @@ Vue.config.productionTip = false
 Vue.use(featureFlag, {
   url: 'http://localhost:3000/proxy',
   clientKey: 'some-secret',
-  //refreshInterval: 1, // Intefval in seconds. Default 30; 0 to disable it
+  //refreshInterval: 1, // Interval in seconds. Default 30; 0 to disable it
   appName: 'client-app-example'
 });
 
