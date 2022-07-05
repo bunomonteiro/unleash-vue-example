@@ -9,6 +9,8 @@
       <br>
 
       <div>
+        <input type="text" v-model="username">
+        <br>
         <button @click="login">Login</button>
       </div>
   </div>
@@ -17,13 +19,16 @@
 <script>
 export default {
   name: 'App',
+  data: () => ({
+    username: ''
+  }),
   methods: {
     login() {
       // NOTE!
       // It's necessary to do this every time the
       // client ($features) is recreated
       this.$features.updateContext({
-        userId: '<some_username>'
+        userId: this.username
       });
 
       this.$router.push({ path: 'home' });
@@ -40,6 +45,16 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+input {
+  background-color: #fff;
+  outline: none;
+  height: 24px;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 button {
